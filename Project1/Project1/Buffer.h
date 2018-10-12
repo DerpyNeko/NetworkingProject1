@@ -16,18 +16,17 @@ public:
 	void WriteShort16LE(size_t index, short value);
 	void WriteShort16LE(short value);
 
-	int ReadShort16LE(size_t index);
-	int ReadShort16LE(void);
+	short ReadShort16LE(size_t index);
+	short ReadShort16LE(void);
 
-	void WriteShort16LE(size_t index, short value);
-	void WriteShort16LE(short value);
+	void WriteLong64LE(size_t index, long value);
+	void WriteLong64LE(long value);
 
-	int ReadShort16LE(size_t index);
-	int ReadShort16LE(void);
+	long ReadLong64LE(size_t index);
+	long ReadLong64LE(void);
 
 private:
-	std::vector<uint8_t> m_IntBuffer;
-	std::vector<uint8_t> m_ShortBuffer;
+	std::vector<uint8_t> m_Buffer;
 
 	int mReadIndex;
 	int mWriteIndex;

@@ -14,15 +14,26 @@ int main(int argc, char **argv)
 
 	Buffer* myShortBuffer = new Buffer(512);
 	myShortBuffer->WriteShort16LE(100);
-	myShortBuffer->WriteShort16LE(9999999900);
+	myShortBuffer->WriteShort16LE(99);
 	myShortBuffer->WriteShort16LE(300);
 
 	printf("value100: %d\n", myShortBuffer->ReadShort16LE());
 	printf("value200: %d\n", myShortBuffer->ReadShort16LE());
 	printf("value300: %d\n", myShortBuffer->ReadShort16LE());
 
+	Buffer* myLongBuffer = new Buffer(512);
+	myLongBuffer->WriteLong64LE(100);
+	myLongBuffer->WriteLong64LE(990);
+	myLongBuffer->WriteLong64LE(300);
+
+	printf("value100: %d\n", myLongBuffer->ReadLong64LE());
+	printf("value200: %d\n", myLongBuffer->ReadLong64LE());
+	printf("value300: %d\n", myLongBuffer->ReadLong64LE());
+
+
 	delete myIntBuffer;
 	delete myShortBuffer;
+	delete myLongBuffer;
 	system("pause");
 	return 0;
 }
