@@ -19,11 +19,11 @@ public:
 	short ReadShort16LE(size_t index);
 	short ReadShort16LE(void);
 
-	void WriteLong64LE(size_t index, long value);
-	void WriteLong64LE(long value);
+	void WriteStringLE(size_t index, std::string value);
+	void WriteStringLE(std::string value);
 
-	long ReadLong64LE(size_t index);
-	long ReadLong64LE(void);
+	std::string ReadStringLE(size_t index);
+	std::string ReadStringLE(void);
 
 private:
 	std::vector<uint8_t> m_Buffer;

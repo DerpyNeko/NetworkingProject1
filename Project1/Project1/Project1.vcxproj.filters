@@ -13,18 +13,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Buffer">
+      <UniqueIdentifier>{5abc4e18-8687-4313-a48b-76e5fcad4e81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buffer\Headers">
+      <UniqueIdentifier>{29935d22-713e-49c2-a5ea-d1ef8cc4eb42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Client">
+      <UniqueIdentifier>{33844080-ad51-4958-9e71-0161ef5cc004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server">
+      <UniqueIdentifier>{1bbc8b6d-05f9-4ce4-9aff-b95f5041b8bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Buffer.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="server_main.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="client_main.cpp">
+      <Filter>Client</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffer.h">
-      <Filter>Header Files</Filter>
+      <Filter>Buffer\Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

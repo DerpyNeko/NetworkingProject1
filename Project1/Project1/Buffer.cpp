@@ -71,31 +71,31 @@ short Buffer::ReadShort16LE(void)
 	return value;
 }
 
-// long 64
-void Buffer::WriteLong64LE(size_t index, long value)
+// String
+void Buffer::WriteStringLE(size_t index, std::string value)
 {
-	m_Buffer[index] = value;
-	m_Buffer[index + 1] = value >> 8;
+	m_Buffer[index] = value[index];
+	m_Buffer[index + 1] = value[index] >> 8;
 }
 
-void Buffer::WriteLong64LE(long value)
+void Buffer::WriteStringLE(std::string value)
 {
-	m_Buffer[mWriteIndex] = value;
-	m_Buffer[mWriteIndex + 1] = value >> 8;
+	m_Buffer[mWriteIndex] = value[mWriteIndex];
+	m_Buffer[mWriteIndex + 1] = value[mWriteIndex] >> 8;
 	mWriteIndex += 2;
 }
 
-long Buffer::ReadLong64LE(size_t index)
+std::string Buffer::ReadStringLE(size_t index)
 {
-	uint16_t value = m_Buffer[index];
-	value |= m_Buffer[index + 1] << 8;
+	std::string value = (char*)m_Buffer[index];
+	value[index] |= m_Buffer[index + 1] << 8;
 	return value;
 }
 
-long Buffer::ReadLong64LE(void)
+std::string Buffer::ReadStringLE(void)
 {
-	uint16_t value = m_Buffer[mReadIndex];
-	value |= m_Buffer[mReadIndex + 1] << 8;
-	mReadIndex += 2;
+	std::string value (m_Buffer.begin(), m_Buffer.end());
+	value[mReadIndex] |= m_Buffer[mReadIndex + 1] << 8;
+	mReadIndex += 1;
 	return value;
 }

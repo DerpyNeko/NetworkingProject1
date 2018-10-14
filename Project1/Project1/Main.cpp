@@ -21,19 +21,19 @@ int main(int argc, char **argv)
 	printf("value200: %d\n", myShortBuffer->ReadShort16LE());
 	printf("value300: %d\n", myShortBuffer->ReadShort16LE());
 
-	Buffer* myLongBuffer = new Buffer(512);
-	myLongBuffer->WriteLong64LE(100);
-	myLongBuffer->WriteLong64LE(990);
-	myLongBuffer->WriteLong64LE(300);
+	Buffer* myStringBuffer = new Buffer(512);
+	myStringBuffer->WriteStringLE("12444");
+	myStringBuffer->WriteStringLE("123123");
+	myStringBuffer->WriteStringLE("99385");
 
-	printf("value100: %d\n", myLongBuffer->ReadLong64LE());
-	printf("value200: %d\n", myLongBuffer->ReadLong64LE());
-	printf("value300: %d\n", myLongBuffer->ReadLong64LE());
+	printf("value100: %s\n", myStringBuffer->ReadStringLE());
+	printf("value200: %s\n", myStringBuffer->ReadStringLE());
+	printf("value300: %s\n", myStringBuffer->ReadStringLE());
 
 
 	delete myIntBuffer;
 	delete myShortBuffer;
-	delete myLongBuffer;
+	delete myStringBuffer;
 	system("pause");
 	return 0;
 }
