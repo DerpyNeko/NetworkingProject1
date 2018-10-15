@@ -2,7 +2,7 @@
 
 Buffer::Buffer(size_t size) : mWriteIndex(0), mReadIndex(0)
 {
-	m_Buffer.resize(size);
+	m_Buffer.resize(size, 0);
 }
 
 // int 32
@@ -74,28 +74,70 @@ short Buffer::ReadShort16LE(void)
 // String
 void Buffer::WriteStringLE(size_t index, std::string value)
 {
-	m_Buffer[index] = value[index];
-	m_Buffer[index + 1] = value[index] >> 8;
+	m_Buffer[index] = value[0];
+
+	for (unsigned int i = 1; i < value.length(); i++)
+	{
+		m_Buffer[index + i] = value[i];
+		index = i;
+	}
+
+	//mWriteIndex += (index + 2);
 }
 
 void Buffer::WriteStringLE(std::string value)
 {
-	m_Buffer[mWriteIndex] = value[mWriteIndex];
-	m_Buffer[mWriteIndex + 1] = value[mWriteIndex] >> 8;
-	mWriteIndex += 2;
+	int index = 0;
+	m_Buffer[mWriteIndex] = value[index];
+
+	for (unsigned int i = 1; i < value.length(); i++)
+	{
+		m_Buffer[mWriteIndex + i] = value[i];
+		index = i;
+	}
+
+	mWriteIndex += (index + 2);
 }
 
 std::string Buffer::ReadStringLE(size_t index)
 {
-	std::string value = (char*)m_Buffer[index];
-	value[index] |= m_Buffer[index + 1] << 8;
+	std::string value = "";
+	value = m_Buffer[index];
+
+	for (int i = 1; i < mWriteIndex; i++)
+	{
+		if (m_Buffer[index + i] == '\0')
+		{
+			mReadIndex += (index + 2);
+			break;
+		}
+
+		value += m_Buffer[index + i];
+		index = i;
+	}
+
+
 	return value;
 }
 
 std::string Buffer::ReadStringLE(void)
 {
-	std::string value (m_Buffer.begin(), m_Buffer.end());
-	value[mReadIndex] |= m_Buffer[mReadIndex + 1] << 8;
-	mReadIndex += 1;
+	int index = 0;
+	std::string value = "";
+	value = m_Buffer[mReadIndex];
+
+	for (int i = 1; i < mWriteIndex; i++)
+	{
+		if (m_Buffer[mReadIndex + i] == '\0')
+		{
+			mReadIndex += (index + 2);
+			break;
+		}
+
+		value += m_Buffer[mReadIndex + i];
+		index = i;
+	}
+
+	
 	return value;
 }

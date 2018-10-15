@@ -6,7 +6,7 @@ int main(int argc, char **argv)
 	Buffer* myIntBuffer = new Buffer(512);
 	myIntBuffer->WriteInt32LE(100);
 	myIntBuffer->WriteInt32LE(200);
-	myIntBuffer->WriteInt32LE(513);
+	myIntBuffer->WriteInt32LE(5142);
 
 	printf("value100: %d\n", myIntBuffer->ReadInt32LE());
 	printf("value200: %d\n", myIntBuffer->ReadInt32LE());
@@ -22,13 +22,13 @@ int main(int argc, char **argv)
 	printf("value300: %d\n", myShortBuffer->ReadShort16LE());
 
 	Buffer* myStringBuffer = new Buffer(512);
-	myStringBuffer->WriteStringLE("12444");
-	myStringBuffer->WriteStringLE("123123");
-	myStringBuffer->WriteStringLE("99385");
+	myStringBuffer->WriteStringLE("Supreme Lord Kazzak");
+	myStringBuffer->WriteStringLE("qwerty");
+	myStringBuffer->WriteStringLE("Fulminaris");
 
-	printf("value100: %s\n", myStringBuffer->ReadStringLE());
-	printf("value200: %s\n", myStringBuffer->ReadStringLE());
-	printf("value300: %s\n", myStringBuffer->ReadStringLE());
+	printf("value100: %s\n", myStringBuffer->ReadStringLE().c_str());
+	printf("value200: %s\n", myStringBuffer->ReadStringLE().c_str());
+	printf("value300: %s\n", myStringBuffer->ReadStringLE().c_str());
 
 
 	delete myIntBuffer;
