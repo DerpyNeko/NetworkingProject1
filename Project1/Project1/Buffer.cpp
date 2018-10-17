@@ -1,3 +1,6 @@
+// Buffer.cpp
+// Jenny Moon & Ryan O'Donnell
+
 #include "Buffer.h"
 
 Buffer::Buffer(size_t size) : mWriteIndex(0), mReadIndex(0)
@@ -7,14 +10,7 @@ Buffer::Buffer(size_t size) : mWriteIndex(0), mReadIndex(0)
 
 void Buffer::ResizeBuffer()
 {
-	std::vector<uint8_t> tempBuffer = m_Buffer;
-	int oldSize = m_Buffer.size();
-	m_Buffer.resize(oldSize * 2, 0);
-
-	for (unsigned int i = 0; i < tempBuffer.size(); i++)
-	{
-		m_Buffer.at(i) = tempBuffer.at(i);
-	}
+	m_Buffer.resize(m_Buffer.size() * 2, 0);
 }
 
 // int 32
@@ -105,10 +101,16 @@ void Buffer::WriteStringLE(size_t index, std::string value)
 
 	for (unsigned int i = 1; i < value.length(); i++)
 	{
+		if (value[i] == 'Ì')
+		{
+			break;
+		}
 		m_Buffer[index + i] = value[i];
+		//index = i;
+
 	}
 
-	mWriteIndex = index;
+	mWriteIndex += (index + 2);
 }
 
 void Buffer::WriteStringLE(std::string value)
@@ -122,8 +124,13 @@ void Buffer::WriteStringLE(std::string value)
 
 	for (unsigned int i = 1; i < value.length(); i++)
 	{
+		if (value[i] == 'Ì')
+		{
+			break;
+		}
 		m_Buffer[mWriteIndex + i] = value[i];
 		index = i;
+
 	}
 
 	mWriteIndex += (index + 2);
@@ -136,14 +143,16 @@ std::string Buffer::ReadStringLE(size_t index)
 
 	for (int i = 1; i < mWriteIndex; i++)
 	{
-		if (m_Buffer[index + i] == '\0')
+		if (m_Buffer[index + i] == '\0' || m_Buffer[index + i] == 'Ì')
 		{
 			mReadIndex += (index + 2);
 			break;
 		}
 
 		value += m_Buffer[index + i];
+		//	index = i;
 	}
+
 
 	return value;
 }
@@ -156,7 +165,7 @@ std::string Buffer::ReadStringLE(void)
 
 	for (int i = 1; i < mWriteIndex; i++)
 	{
-		if (m_Buffer[mReadIndex + i] == '\0')
+		if (m_Buffer[mReadIndex + i] == '\0' || m_Buffer[index + i] == 'Ì')
 		{
 			mReadIndex += (index + 2);
 			break;

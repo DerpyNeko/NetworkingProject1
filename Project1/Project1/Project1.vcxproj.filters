@@ -19,25 +19,13 @@
     <Filter Include="Buffer\Headers">
       <UniqueIdentifier>{29935d22-713e-49c2-a5ea-d1ef8cc4eb42}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Client">
-      <UniqueIdentifier>{33844080-ad51-4958-9e71-0161ef5cc004}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Server">
-      <UniqueIdentifier>{1bbc8b6d-05f9-4ce4-9aff-b95f5041b8bf}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Buffer.cpp">
       <Filter>Buffer</Filter>
     </ClCompile>
-    <ClCompile Include="server_main.cpp">
-      <Filter>Server</Filter>
-    </ClCompile>
     <ClCompile Include="client_main.cpp">
-      <Filter>Client</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

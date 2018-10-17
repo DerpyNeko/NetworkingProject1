@@ -1,3 +1,6 @@
+// Buffer.h
+// Jenny Moon & Ryan O'Donnell
+
 #ifndef BUFFER_HG
 #define BUFFER_HG
 

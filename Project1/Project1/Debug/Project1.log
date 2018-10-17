@@ -1,18 +1,17 @@
-﻿  Buffer.cpp
-c:\users\ryan\desktop\info 6016 networking\projects\networkingproject1\project1\project1\buffer.cpp(34): warning C4018: '>': signed/unsigned mismatch
-c:\users\ryan\desktop\info 6016 networking\projects\networkingproject1\project1\project1\buffer.cpp(69): warning C4244: '=': conversion from 'short' to '_Ty', possible loss of data
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Project1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Buffer.cpp
+c:\users\cryst\downloads\gdp semester 1\6016 - networking\networkingproject1\project1\project1\buffer.cpp(27): warning C4018: '>': signed/unsigned mismatch
+c:\users\cryst\downloads\gdp semester 1\6016 - networking\networkingproject1\project1\project1\buffer.cpp(62): warning C4244: '=': conversion from 'short' to '_Ty', possible loss of data
           with
           [
               _Ty=uint8_t
           ]
-c:\users\ryan\desktop\info 6016 networking\projects\networkingproject1\project1\project1\buffer.cpp(75): warning C4018: '>': signed/unsigned mismatch
-c:\users\ryan\desktop\info 6016 networking\projects\networkingproject1\project1\project1\buffer.cpp(78): warning C4244: '=': conversion from 'short' to '_Ty', possible loss of data
+c:\users\cryst\downloads\gdp semester 1\6016 - networking\networkingproject1\project1\project1\buffer.cpp(68): warning C4018: '>': signed/unsigned mismatch
+c:\users\cryst\downloads\gdp semester 1\6016 - networking\networkingproject1\project1\project1\buffer.cpp(71): warning C4244: '=': conversion from 'short' to '_Ty', possible loss of data
           with
           [
               _Ty=uint8_t
           ]
   client_main.cpp
-  Main.cpp
-  server_main.cpp
   Generating Code...
-  Project1.vcxproj -> C:\Users\Ryan\Desktop\INFO 6016 Networking\Projects\NetworkingProject1\Project1\Debug\Project1.exe
+  Project1.vcxproj -> C:\Users\Cryst\Downloads\GDP Semester 1\6016 - Networking\NetworkingProject1\Project1\Debug\Client.exe
