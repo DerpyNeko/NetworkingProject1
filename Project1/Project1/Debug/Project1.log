@@ -1,0 +1,18 @@
+﻿  Buffer.cpp
+c:\users\ryan\desktop\info 6016 networking\projects\networkingproject1\project1\project1\buffer.cpp(34): warning C4018: '>': signed/unsigned mismatch
+c:\users\ryan\desktop\info 6016 networking\projects\networkingproject1\project1\project1\buffer.cpp(69): warning C4244: '=': conversion from 'short' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+c:\users\ryan\desktop\info 6016 networking\projects\networkingproject1\project1\project1\buffer.cpp(75): warning C4018: '>': signed/unsigned mismatch
+c:\users\ryan\desktop\info 6016 networking\projects\networkingproject1\project1\project1\buffer.cpp(78): warning C4244: '=': conversion from 'short' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+  client_main.cpp
+  Main.cpp
+  server_main.cpp
+  Generating Code...
+  Project1.vcxproj -> C:\Users\Ryan\Desktop\INFO 6016 Networking\Projects\NetworkingProject1\Project1\Debug\Project1.exe

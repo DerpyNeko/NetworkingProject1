@@ -7,6 +7,8 @@ class Buffer {
 public:
 	Buffer(size_t size);
 
+	void ResizeBuffer();
+
 	void WriteInt32LE(size_t index, int value);
 	void WriteInt32LE(int value);
 
